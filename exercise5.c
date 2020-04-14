@@ -250,7 +250,7 @@ decode_instruction(char* instruction, uint16_t count, uint8_t lsb, uint8_t msb)
 			break;
 		case 3:
 			sprintf(arg1, "r%d", get_bits(code, 3, 0));
-			sprintf(arg2, ", %d", get_bits(code, 4, 11));
+			sprintf(arg2, ", %d", get_bits(code, 11, 4));
 			sprintf(arg3, "");
 	
 			switch (get_bits(code, 12, 12)) {
@@ -310,7 +310,7 @@ decode_instruction(char* instruction, uint16_t count, uint8_t lsb, uint8_t msb)
 							break;
 						case 1:
 							sprintf(opcode, "mvn");
-							sprintf(arg2, ", r%d", get_bits(code, 7, 10));
+							sprintf(arg2, ", r%d", get_bits(code, 10, 7));
 							sprintf(arg3, "");
 							break;
 						case 2:
